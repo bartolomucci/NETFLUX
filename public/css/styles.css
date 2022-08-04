@@ -1,0 +1,140 @@
+
+:root{
+    --main-color: #e50914; 
+}
+
+body{
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-primary{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff;
+}
+
+.btn-primary:hover{
+    background-color: #000;
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+main{
+    min-height: 90vh;
+}
+
+.poster{
+    height: 500px !important;
+}
+
+h1{
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 20px;
+}
+
+.navbar-brand{
+    font-size: 1.8em;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--main-color);
+}
+
+.MovieCard{
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.MovieCard .MovieCard-body{
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fefefe;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.MovieCard-body h3{
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0 0 10px;
+}
+
+.MovieCard-body .btn-primary{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.MovieCard:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.MovieCard:hover .MovieCard-body{
+    opacity: 1;
+}
+.MovieCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.1s ease-in-out;
+}
+.MovieCard:hover img{
+    transform: scale(1.2);
+}
+
+.MoviePlayer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.MoviePlayer .MoviePlayer-body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    padding: 2em;
+}
+
+.MoviePlayer-body .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.MoviePlayer .MoviePlayer-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

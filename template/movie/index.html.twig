@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="container-fluid py-4">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Résultats pour votre recherche "{{ search }}"</h1>
+				<p>{{ count }}
+					résultats trouvés</p>
+			</div>
+		</div>
+		<div class="row">
+			{% if movies|length > 0 %}
+				{% for movie in movies %}
+					<div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+						<a href="/?controller=movie&action=show&id={{ movie.id }}" class="MovieCard">
+							<img src="{{ movie.cover }}" class="w-100 poster">
+							<div class="MovieCard-body">
+								<h3>{{ movie.title }}</h3>
+								<p>
+									{% for genre in movie.genre|split('|') %}
+										<span class="badge bg-secondary">{{ genre }}</span>
+									{% endfor %}
+								</p>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			{% else %}
+				<div class="alert alert-danger text-center">
+					<h2>Aucun film n'a été trouvé</h2>
+					<p>Aucun résultat ne correspond à votre recherche</p>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
